@@ -1,0 +1,11 @@
+prefix=@PREFIX@
+libdir=@LIBDIR@
+includedir=@INCLUDEDIR@
+
+Name: tree-sitter-smelly_code_detector
+Description: SmellyCodeDetector grammar for tree-sitter
+URL: @URL@
+Version: @VERSION@
+Requires: @REQUIRES@
+Libs: -L${libdir} @ADDITIONAL_LIBS@ -ltree-sitter-smelly_code_detector
+Cflags: -I${includedir}
