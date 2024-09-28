@@ -14,26 +14,4 @@ public class LongMethodDetector {
         });
     }
 }
-// public class LongMethodDetector {
-//     public static void detectLongMethods(CompilationUnit cu, int threshold) {
-//         cu.findAll(MethodDeclaration.class).forEach(method -> {
-//             int length = method.getEnd().get().line - method.getBegin().get().line;
-//             if (length > threshold) {
-//                 System.out.println("Long method found: " + method.getName() + " with " + length + " lines.");
-//             }
-//         });
-//     }
-// }
 
-// public class LongMethodDetector {
-//     public static void detectLongMethods(CompilationUnit cu, int threshold) {
-//         cu.findAll(MethodDeclaration.class).forEach(method -> {
-//             if (method.getBody().isPresent()) {
-//                 int length = method.getBody().get().getStatements().size(); // Count statements instead of lines
-//                 if (length > threshold) {
-//                     System.out.println("Long method found: " + method.getName() + " with " + length + " statements.");
-//                 }
-//             }
-//         });
-//     }
-// }

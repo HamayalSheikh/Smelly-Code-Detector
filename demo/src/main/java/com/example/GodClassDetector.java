@@ -30,11 +30,10 @@ public class GodClassDetector {
             boolean fieldThresholdExceeded = fieldCount > FIELD_THRESHOLD;
             boolean couplingThresholdExceeded = classDependencies.size() > COUPLING_THRESHOLD;
 
-
             if (methodThresholdExceeded || fieldThresholdExceeded || couplingThresholdExceeded) {
                 godClassDetected[0] = true; // Mark that a God Class has been detected
-
                 System.out.println("God Class detected: " + cls.getName());
+                
 
                 // Report specific thresholds that were exceeded
                 if (methodThresholdExceeded) {
@@ -101,27 +100,3 @@ public class GodClassDetector {
     }
 }
 
-
-// public class GodClassDetector {
-//     public static void detectGodClasses(CompilationUnit cu, int methodThreshold, int fieldThreshold) {
-//         cu.findAll(ClassOrInterfaceDeclaration.class).forEach(cls -> {
-//             int methodCount = cls.getMethods().size();
-//             int fieldCount = cls.getFields().size();
-//             if (methodCount > methodThreshold || fieldCount > fieldThreshold) {
-//                 System.out.println("God class detected: " + cls.getName());
-//             }
-//         });
-//     }
-// }
-
-// public class GodClassDetector {
-//     public static void detectGodClasses(CompilationUnit cu, int methodThreshold, int fieldThreshold) {
-//         cu.findAll(ClassOrInterfaceDeclaration.class).forEach(cls -> {
-//             int methodCount = cls.getMethods().size();
-//             int fieldCount = cls.getFields().size();
-//             if (methodCount > methodThreshold || fieldCount > fieldThreshold) {
-//                 System.out.println("God class detected: " + cls.getName() + " with " + methodCount + " methods and " + fieldCount + " fields.");
-//             }
-//         });
-//     }
-// }
