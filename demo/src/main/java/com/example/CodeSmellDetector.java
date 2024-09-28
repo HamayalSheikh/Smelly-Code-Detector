@@ -71,7 +71,7 @@ class CodeSmellAnalyzer {
     // Java code smell detection
     public static void detectJavaCodeSmells(CompilationUnit cu) {
         LongMethodDetector.detectLongMethods(cu, 10);
-        GodClassDetector.detectGodClasses(cu, 8, 4);
+        GodClassDetector.detectGodClass(cu);
         LargeParameterListDetector.detectLargeParameterList(cu, 5);
         DuplicatedCodeDetector.detectDuplicatedCode(cu);
     }
