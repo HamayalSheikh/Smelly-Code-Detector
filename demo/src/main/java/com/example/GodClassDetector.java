@@ -19,7 +19,7 @@ public class GodClassDetector {
     private static final int COUPLING_THRESHOLD = 5;
 
     public static void detectGodClass(CompilationUnit cu) {
-        boolean godClassDetected = false; // Track if any God Class is detected
+        final boolean[] godClassDetected = {false}; // Track if any God Class is detected
         cu.findAll(ClassOrInterfaceDeclaration.class).forEach(cls -> {
             int methodCount = cls.getMethods().size();
             int fieldCount = cls.getFields().size();
@@ -32,7 +32,7 @@ public class GodClassDetector {
 
 
             if (methodThresholdExceeded || fieldThresholdExceeded || couplingThresholdExceeded) {
-                godClassDetected = true; // Mark that a God Class has been detected
+                godClassDetected[0] = true; // Mark that a God Class has been detected
 
                 System.out.println("God Class detected: " + cls.getName());
 
@@ -60,7 +60,7 @@ public class GodClassDetector {
         });
 
         // If no God Class is detected, print this message
-        if (!godClassDetected) {
+        if (!godClassDetected[0]) {
             System.out.println("No God Class detected in the file.");
         }
             // If the class has too many methods or fields, it's a potential God Class
