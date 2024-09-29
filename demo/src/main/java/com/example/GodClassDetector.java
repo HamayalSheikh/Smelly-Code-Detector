@@ -32,10 +32,6 @@ public class GodClassDetector {
 
             if (methodThresholdExceeded || fieldThresholdExceeded || couplingThresholdExceeded) {
                 godClassDetected[0] = true; // Mark that a God Class has been detected
-<<<<<<< HEAD
-=======
-
->>>>>>> 64a7ca680a4c9bf960f81d8b1d462f2a057141fc
                 System.out.println("God Class detected: " + cls.getName());
                 
 
