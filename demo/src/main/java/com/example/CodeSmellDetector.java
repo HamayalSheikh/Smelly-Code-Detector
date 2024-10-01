@@ -75,6 +75,8 @@ class CodeSmellAnalyzer {
         LargeParameterListDetector.detectLargeParameterList(cu, 5);
         DuplicatedCodeDetector.detectDuplicatedCode(cu);
         FeatureEnvyDetector.detectFeatureEnvy(cu);
+        DataOnlyClassDetector.detectDataOnlyClasses(cu);
+        DeadCodeDetector.detectDeadCode(cu);
     }
 
     // C++ code smell detection
